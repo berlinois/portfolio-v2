@@ -21,40 +21,42 @@
                         <div class="exp-card-subtitle">{{exp.city}}</div>
                     </div>
                     <div class="exp-card-content">
-                        <div
-                            *ngFor="let parag of exp.paragraphList"
-                            class="exp-card-parag">
-                            <div class="exp-card-parag-title">{{parag.title}}</div>
-                            <ul>
-                                <li
-                                    *ngFor="let text of parag.listText"
-                                    class="exp-card-parag-text">
-                                    {{text}}
-                                </li>
-                            </ul>
-                        </div>
+                        @for (parag of exp.paragraphList;track parag) {
+                            <div
+                                class="exp-card-parag">
+                                <div class="exp-card-parag-title">{{parag.title}}</div>
+                                <ul>
+                                    @for (text of parag.listText;track text) {
+                                        <li
+                                            class="exp-card-parag-text">
+                                            {{text}}
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
                     </div>
                     <div></div> <!-- To center the parag vertically -->
                 </div>
                 <div class="exp-card-tech-content">
-                    <div
-                        *ngFor="let listTech of listColumnTech"
-                        class="exp-card-tech-main">
-                        <exp-tech
-                            *ngFor="let tech of listTech"
-                            [tech]="tech">
-                        </exp-tech>
-                    </div>
+                    @for (listTech of listColumnTech;track listTech) {
+                        <div class="exp-card-tech-main">
+                            @for (tech of listTech;track tech) {
+                                <exp-tech [tech]="tech"></exp-tech>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>
-        <div
-            *ngIf="!isLast"
-            class="exp-content space">
-            <div class="exp-timing-content space">
-                <div class="exp-timing-border space"></div>
+        @if (!isLast) {
+            <div
+                class="exp-content space">
+                <div class="exp-timing-content space">
+                    <div class="exp-timing-border space"></div>
+                </div>
+                <div class="exp-time-expe"></div>
+                <div class="exp-card hidden"></div>
             </div>
-            <div class="exp-time-expe"></div>
-            <div class="exp-card hidden"></div>
-        </div>
+        }
     </div>

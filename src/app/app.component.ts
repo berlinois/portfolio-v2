@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HeaderMenuPhonePanelComponent } from './header/components/header-menu-phone-panel/header-menu-phone-panel.component';
 import { HeaderService } from './header/services/header.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -14,8 +13,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     HeaderComponent,
     HeaderMenuPhonePanelComponent,
-    RouterOutlet,
-    CommonModule
+    RouterOutlet
   ],
   template: `
     <div class="main">
@@ -25,11 +23,12 @@ import { CommonModule } from '@angular/common';
           <router-outlet></router-outlet>
         </div>
       </div>
-      <div
-        *ngIf="isPanelOpened"
-        class="main-panel-menu">
-        <app-header-menu-phone-panel></app-header-menu-phone-panel>
-      </div>
+      @if(isPanelOpened) {
+        <div
+          class="main-panel-menu">
+          <app-header-menu-phone-panel></app-header-menu-phone-panel>
+        </div>
+        }
     </div>
   `,
   styles: [`

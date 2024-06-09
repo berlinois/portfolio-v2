@@ -5,14 +5,13 @@ import { LanguageService } from "src/app/services/language.service";
 import { HomeInterface } from "./models/home.interface";
 import { HomeFrData } from "./data/home.fr.data";
 import { HomeEnData } from "./data/home.en.data";
-import { CommonModule } from "@angular/common";
 import { ImgDirective } from "./directives/img.directive";
 import { ImageStateService } from "./services/image-state.service";
 import { Router, RouterModule } from "@angular/router";
 
 @Component({
     standalone: true,
-    imports: [CommonModule, ImgDirective, RouterModule],
+    imports: [ImgDirective, RouterModule],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

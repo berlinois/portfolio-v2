@@ -1,18 +1,20 @@
-<div
-    *ngIf="!isOnPath('home')"
-    [class.exit]="hideAnimation"
-    class="header-menu-main">
-    <img
-        src="assets/image/linkedin_round2.png"
-        alt="personal picture rounded"
-        class="header-menu-img"
-        (click)="goToHome()"
-        [class.active-experience]="isOnFirstPage()">
+@if (!isOnPath('home')) {
     <div
-        *ngFor="let item of menu.listItems"
-        class="header-menu-item"
-        [routerLink]="item.link"
-        routerLinkActive="active">
-        {{item.value}}
+        [class.exit]="hideAnimation"
+        class="header-menu-main">
+        <img
+            src="assets/image/linkedin_round2.png"
+            alt="personal picture rounded"
+            class="header-menu-img"
+            (click)="goToHome()"
+            [class.active-experience]="isOnFirstPage()">
+        @for (item of menu.listItems;track item) {
+            <div
+                class="header-menu-item"
+                [routerLink]="item.link"
+                routerLinkActive="active">
+                {{item.value}}
+            </div>
+        }
     </div>
-</div>
+}

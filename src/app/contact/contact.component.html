@@ -24,9 +24,11 @@
                     name="nom"
                     [class.invalid]="isFieldInvalid('nom')"
                     [placeholder]="listPlaceholders.name">
-                <span *ngIf="isFieldInvalid('nom')">
-                    Veuillez remplir le champ
-                </span>
+                @if (isFieldInvalid('nom')) {
+                    <span>
+                        Veuillez remplir le champ
+                    </span>
+                }
             </div>
                 
             <div class="contact-item">
@@ -37,9 +39,11 @@
                     maxlength="10"
                     [class.invalid]="isFieldInvalid('telephone')"
                     [placeholder]="listPlaceholders.phone">
-                <span *ngIf="isFieldInvalid('telephone')">
-                    Veuillez saisir un numéro valide de dix chiffres
-                </span>
+                @if (isFieldInvalid('telephone')) {
+                    <span>
+                        Veuillez saisir un numéro valide de dix chiffres
+                    </span>
+                }
             </div>
         </div>
 
@@ -51,9 +55,11 @@
                     name="mail"
                     [class.invalid]="isFieldInvalid('mail')"
                     [placeholder]="listPlaceholders.email">
-                <span *ngIf="isMailInvalid()">
-                    {{isMailInvalid()}}
-                </span>
+                @if (isMailInvalid()) {
+                    <span>
+                        {{isMailInvalid()}}
+                    </span>
+                }
             </div>
         </div>
 
@@ -65,9 +71,11 @@
                     [class.invalid]="isFieldInvalid('message')"
                     [placeholder]="listPlaceholders.message">
                 </textarea>
-                <span *ngIf="isFieldInvalid('message')">
-                    Veuillez remplir le champ
-                </span>
+                @if (isFieldInvalid('message')) {
+                    <span>
+                        Veuillez remplir le champ
+                    </span>
+                }
             </div>
         </div>
 

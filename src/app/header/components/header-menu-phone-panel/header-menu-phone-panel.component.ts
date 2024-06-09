@@ -1,7 +1,6 @@
 import { Component, DestroyRef, ElementRef, Renderer2, ViewChild, inject } from "@angular/core";
 import { HeaderService } from "../../services/header.service";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { CommonModule } from "@angular/common";
 import { Menu } from "../../models/menu";
 import { LanguageEnum } from "../../enums/language.enum";
 import { MenuFrenchData } from "../../data/menu.fr.data";
@@ -12,9 +11,7 @@ import { Router } from "@angular/router";
 @Component({
     standalone: true,
     selector: `app-header-menu-phone-panel`,
-    imports: [
-        CommonModule
-    ],
+    imports: [],
     templateUrl: `./header-menu-phone-panel.component.html`,
     styleUrls: [`./header-menu-phone-panel.component.scss`]
 })
