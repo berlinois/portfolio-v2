@@ -6,7 +6,6 @@ import { Skills } from "./models/skills";
 import { SkillsFrench } from "./data/skills.fr.data";
 import { SkillsEnglish } from "./data/skills.en.data";
 import { SkillsCardTechComponent } from "./components/skills-card-tech/skills-card-tech.component";
-import { CommonModule } from "@angular/common";
 import { SkillsCardOverviewComponent } from "./components/skills-card-overview/skills-card-overview.component";
 
 @Component({
@@ -14,7 +13,6 @@ import { SkillsCardOverviewComponent } from "./components/skills-card-overview/s
     imports: [
         SkillsCardTechComponent,
         SkillsCardOverviewComponent,
-        CommonModule
     ],
     templateUrl: './skills.component.html',
     styleUrls: ['./skills.component.scss']

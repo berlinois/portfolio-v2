@@ -1,6 +1,5 @@
 import { Component, DestroyRef, OnInit, inject } from "@angular/core";
 import { ItemMenu } from "../../models/item-menu";
-import { CommonModule } from "@angular/common";
 import { Router, RouterModule } from "@angular/router";
 import { Menu } from "../../models/menu";
 import { LanguageService } from "src/app/services/language.service";
@@ -14,7 +13,6 @@ import { HeaderService } from "../../services/header.service";
     standalone: true,
     selector: `app-header-menu-desktop`,
     imports: [
-        CommonModule,
         RouterModule
     ],
     templateUrl: `./header-menu-desktop.component.html`,

@@ -7,26 +7,28 @@
         [imageId]="imageId"
         loadChecker>
     
-    <div
-        *ngIf="homeDescription"
-        [class.exit]="exitAnimation"
-        class="home-content">
-        <h1 class="home-title">
-            {{homeDescription.title}}
-        </h1>
-        <span class="home-subtitle">
-            {{homeDescription.subtitle}}
-        </span>
-        <span
-            *ngFor="let line of homeDescription.paragraphs"
-            class="home-parag">
-            {{line}}
-        </span>
-        <button
-            (click)="navigateExperience()"
+    @if(homeDescription) {
+        <div
             [class.exit]="exitAnimation"
-            class="home-button">
-            <div>{{homeDescription.buttonText}}</div>
-        </button>
-    </div>
+            class="home-content">
+            <h1 class="home-title">
+                {{homeDescription.title}}
+            </h1>
+            <span class="home-subtitle">
+                {{homeDescription.subtitle}}
+            </span>
+            @for(line of homeDescription.paragraphs;track line) {
+                <span
+                    class="home-parag">
+                    {{line}}
+                </span>
+            }
+            <button
+                (click)="navigateExperience()"
+                [class.exit]="exitAnimation"
+                class="home-button">
+                <div>{{homeDescription.buttonText}}</div>
+            </button>
+        </div>
+    }
 </div>

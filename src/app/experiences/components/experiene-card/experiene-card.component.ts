@@ -1,4 +1,3 @@
-import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { ExperienceCard } from "src/app/experiences/models/experience-card";
 import { LocalDatePipe } from "src/app/pipes/local-date.pipe";
@@ -9,7 +8,6 @@ import { ExperienceTechnology } from "src/app/experiences/models/experience-tech
     standalone: true,
     selector: 'exp-card',
     imports: [
-        CommonModule,
         LocalDatePipe,
         ExperienceTechCard
     ],

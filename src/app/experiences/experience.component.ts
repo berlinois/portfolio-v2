@@ -5,12 +5,11 @@ import { LanguageService } from "src/app/services/language.service";
 import { ExperiencesList } from "./models/experiences-list";
 import { ExperiencesFrench } from "./data/experiences.fr.data";
 import { ExperiencesEnglish } from "./data/experiences.en.data";
-import { CommonModule } from "@angular/common";
 import { ExperienceCardComponent } from "./components/experiene-card/experiene-card.component";
 
 @Component({
     standalone: true,
-    imports: [CommonModule, ExperienceCardComponent],
+    imports: [ExperienceCardComponent],
     templateUrl: './experience.component.html',
     styleUrls: ['./experience.component.scss']
 })

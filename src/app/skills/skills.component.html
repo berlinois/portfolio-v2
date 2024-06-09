@@ -4,9 +4,10 @@
         [overview]="skills.overview">
     </skills-card-overview>
     <div class="skills-tech-content">
-        <skills-card-tech
-            *ngFor="let card of skills.domains"
-            [domain]="card">
-        </skills-card-tech>
+        @for (card of skills.domains;track card) {
+            <skills-card-tech
+                [domain]="card">
+            </skills-card-tech>
+        }
     </div>
 </div>
