@@ -1,0 +1,64 @@
+@import '../../styles/variables';
+
+.contact-main {
+    display: flex;
+    border-radius: $cardBorderRadius;
+    background-color: $lightGreenColor;
+    padding: 1.5rem 2rem;
+    margin: 0 auto 2rem;
+    width: fit-content;
+    color: white;
+}
+.contact-text {
+    font-size: 1.2em;
+    font-family: hermeneusone;
+}
+.contact-number-number {
+    margin-left: 1rem;
+    color: $darkGreenColor;
+    &.link {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.contact-number-mail {
+    color: $lightGreenColor;
+    margin: 1rem 0 1.5rem;
+}
+.contact-form {
+    border-radius: $cardBorderRadius;
+    padding: 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+.contact-line {
+    display: flex;
+    margin-bottom: 1.5rem;
+    &.two-items > div:first-of-type {
+        margin-right: 2rem;
+    }
+    &.two-items > div:last-of-type {
+        margin-left: 2rem;
+    }
+    &.button {
+        justify-content: center;
+    }
+}
+.contact-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    & > span {
+        color: red;
+        margin-top: .5rem;
+    }
+}
+.invalid {
+    border-color: red;
+}
+textarea {
+    height: 8rem;
+}
+button:disabled.sending {
+    background-color: $lightGreenColor;
+}

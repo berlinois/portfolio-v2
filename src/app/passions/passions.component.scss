@@ -1,0 +1,54 @@
+@import './../../styles/variables';
+
+.passion-item {
+    display: flex;
+    justify-content: space-between;
+    & + & {
+        margin-top: 4rem;
+    }
+    &:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+}
+.passion-item-img {
+    border-radius: $cardBorderRadius;
+    height: 17rem;
+}
+.passion-item-block {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: $lightGreenColor;
+    border-radius: $cardBorderRadius;
+    padding: 2rem 5rem;
+    color: white;
+}
+.passion-item-title {
+    font-family: hermeneusone;
+    font-size: 1.8em;
+    // margin-bottom: 1.5rem;
+}
+.passion-item-parag-content {
+    // background-color: red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.passion-item-parag {
+    & + & {
+        margin-top: .4rem;
+    }
+}
+
+@media (max-width: 1640px) {
+    .passion-item-img {
+        height: 16rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    .passion-item-block {
+        padding: 2rem 3rem;
+    }
+}

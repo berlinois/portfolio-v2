@@ -1,0 +1,58 @@
+@import './../../../../styles/variables';
+.header-menu-main {
+    display: flex;
+    width: fit-content;
+    border: 1px solid $lightGreenColor;
+    border-radius: 1.68rem;
+    animation: .6s menu-appear ease-out;
+    &.exit {
+        animation: .6s menu-disappear ease-in;
+    }
+}
+@keyframes menu-appear {
+    from {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes menu-disappear {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-300%);
+    }
+}
+.header-menu-item {
+    padding: 1rem 3rem;
+    color: $lightGreenColor;
+    cursor: pointer;
+    user-select: none;
+    font-family: hermeneusone;
+    letter-spacing: .05em;
+    font-size: 1.1em;
+    &.active {
+        background-color: $lightGreenColor;
+        cursor: default;
+        color: white;
+    }
+    &:last-child {
+        border-top-right-radius: 1.68rem;
+        border-bottom-right-radius: 1.68rem;
+    }
+    &:not(.active):hover {
+
+    }
+}
+.header-menu-img {
+    height: 3.4rem;
+    object-fit: contain;
+    border-top-left-radius: 1.68rem;
+    border-bottom-left-radius: 1.68rem;
+    cursor: pointer;
+    &.active-experience {
+        background-color: $lightGreenColor;
+    }
+}

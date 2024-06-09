@@ -1,0 +1,60 @@
+    <div class="exp-content-main">
+        <div class="exp-content">
+            <div class="exp-timing-content">
+                <div class="exp-timing-border"></div>
+                <div class="exp-timing-date-content">
+                    <div class="exp-timing-date-value">{{exp.dateEnd | localDate:'MMMM yyyy'}}</div>
+                    <img src="assets/icons/show-date.svg" alt="image to show the date" class="exp-timing-date-img">
+                </div>
+                <div class="exp-timing-date-content">
+                    <div class="exp-timing-date-value">{{exp.dateBegin | localDate:'MMMM yyyy'}}</div>
+                    <img src="assets/icons/show-date.svg" alt="image to show the date" class="exp-timing-date-img">
+                </div>
+            </div>
+            <div class="exp-time-expe">
+                {{exp.timeExperience}}
+            </div>
+            <div class="exp-card">
+                <div class="exp-card-desc">
+                    <div class="exp-card-header">
+                        <div class="exp-card-title">{{exp.title}}</div>
+                        <div class="exp-card-subtitle">{{exp.city}}</div>
+                    </div>
+                    <div class="exp-card-content">
+                        <div
+                            *ngFor="let parag of exp.paragraphList"
+                            class="exp-card-parag">
+                            <div class="exp-card-parag-title">{{parag.title}}</div>
+                            <ul>
+                                <li
+                                    *ngFor="let text of parag.listText"
+                                    class="exp-card-parag-text">
+                                    {{text}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div></div> <!-- To center the parag vertically -->
+                </div>
+                <div class="exp-card-tech-content">
+                    <div
+                        *ngFor="let listTech of listColumnTech"
+                        class="exp-card-tech-main">
+                        <exp-tech
+                            *ngFor="let tech of listTech"
+                            [tech]="tech">
+                        </exp-tech>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            *ngIf="!isLast"
+            class="exp-content space">
+            <div class="exp-timing-content space">
+                <div class="exp-timing-border space"></div>
+            </div>
+            <div class="exp-time-expe"></div>
+            <div class="exp-card hidden"></div>
+        </div>
+    </div>

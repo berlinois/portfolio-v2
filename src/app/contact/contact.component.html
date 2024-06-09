@@ -1,0 +1,83 @@
+<div class="main-content">
+
+    <div class="contact-main contact-text">
+        <span>{{phoneText.startText}}</span>
+        <span
+            class="contact-number-number"
+            [class.link]="!isPhoneShown"
+            (click)="this.isPhoneShown = true">
+            {{getPhoneNumber}}
+        </span>
+    </div>
+
+    <form
+        class="contact-form"
+        [formGroup]="form">
+
+        <span class="contact-number-mail contact-text">{{phoneText.emailText}}</span>
+
+        <div class="contact-line two-items">
+            <div class="contact-item">
+                <input
+                    type="text"
+                    formControlName="nom"
+                    name="nom"
+                    [class.invalid]="isFieldInvalid('nom')"
+                    [placeholder]="listPlaceholders.name">
+                <span *ngIf="isFieldInvalid('nom')">
+                    Veuillez remplir le champ
+                </span>
+            </div>
+                
+            <div class="contact-item">
+                <input
+                    type="text"
+                    formControlName="telephone"
+                    name="telephone"
+                    maxlength="10"
+                    [class.invalid]="isFieldInvalid('telephone')"
+                    [placeholder]="listPlaceholders.phone">
+                <span *ngIf="isFieldInvalid('telephone')">
+                    Veuillez saisir un numéro valide de dix chiffres
+                </span>
+            </div>
+        </div>
+
+        <div class="contact-line">
+            <div class="contact-item">
+                <input
+                    type="text"
+                    formControlName="mail"
+                    name="mail"
+                    [class.invalid]="isFieldInvalid('mail')"
+                    [placeholder]="listPlaceholders.email">
+                <span *ngIf="isMailInvalid()">
+                    {{isMailInvalid()}}
+                </span>
+            </div>
+        </div>
+
+        <div class="contact-line">
+            <div class="contact-item textarea">
+                <textarea
+                    formControlName="message"
+                    name="message"
+                    [class.invalid]="isFieldInvalid('message')"
+                    [placeholder]="listPlaceholders.message">
+                </textarea>
+                <span *ngIf="isFieldInvalid('message')">
+                    Veuillez remplir le champ
+                </span>
+            </div>
+        </div>
+
+        <div class="contact-line button">
+            <button
+                (click)="sendMail()"
+                [class.sending]="mailSending"
+                [disabled]="!form.valid || mailSending">
+                {{buttonText | async}}
+            </button>
+        </div>
+    </form>
+</div>

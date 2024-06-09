@@ -1,0 +1,14 @@
+<div class="header-lang-main">
+    <img
+        src="assets/image/french-flag.jpg"
+        alt="french flag image"
+        [class.active]="isFenchSelected()"
+        (click)="changeLanguage(language.FRENCH)"
+        class="header-lang-img">
+    <img
+        src="assets/image/english-flag.png"
+        alt="english flag image"
+        (click)="changeLanguage(language.ENGLISH)"
+        [class.active]="!isFenchSelected()"
+        class="header-lang-img">
+</div>

@@ -1,0 +1,24 @@
+@import './../../../../styles/variables';
+
+.exp-card-tech-item {
+    border-radius: 50%;
+    background-color: $darkGreenColor;
+    color: white;
+    width: 5.5rem;
+    height: 5.5rem;
+    aspect-ratio: 1;
+    padding: .1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: hermeneusone;
+    font-size: .9rem;
+    cursor: default;
+    &.blank {
+        opacity: 0;
+        cursor: default;
+    }
+}
+
+

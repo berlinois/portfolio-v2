@@ -1,0 +1,42 @@
+@import "./variables";
+
+/**
+Basic Tag
+*/
+
+button, input[type=button] {
+  font-family: hermeneusone;
+  padding: 1.25rem 1.6rem;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  background-color: $darkGreenColor;
+  border-radius: 28px;
+  box-sizing: border-box;
+  color: white;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    background-color: $mediumGreenColor;
+  }
+  &:disabled {
+    background-color: #dbdbdb;
+    border: none;
+    cursor: default;
+    color: white;
+  }
+}
+
+input[type=text], textarea {
+  font-family: kameron;
+  padding: 1rem 1.6rem;
+  border-color: $lightGreenColor;
+  border-radius: 5px;
+  font-size: 1.1em;
+  border-width: 1px;
+  background-color: rgb(250, 250, 250);
+  outline: none;
+}

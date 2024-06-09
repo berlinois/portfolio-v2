@@ -1,0 +1,40 @@
+@import "./../../../../styles/variables";
+
+.skills-ov-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+    background-color: $lightGreenColor;
+    border-radius: $cardBorderRadius;
+    padding: 2rem 4rem;
+    font-family: hermeneusone;
+    gap: 2rem 7rem;
+}
+.skills-ov-key {
+    color: $darkGreenColor;
+}
+.skills-ov-value {
+    color: white;
+    font-size: 1.2rem;
+    margin-left: .4rem;
+}
+
+@media (max-width: 992px) {
+    .skills-ov-main {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .skills-ov-main {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    .skills-ov-key {
+        font-size: .9rem;
+    }
+    .skills-ov-value {
+        font-size: 1rem;
+    }
+}

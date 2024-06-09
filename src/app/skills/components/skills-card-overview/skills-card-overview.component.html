@@ -1,0 +1,6 @@
+<div class="skills-ov-main">
+    <div *ngFor="let item of overview | keyvalue: keyDescOrder">
+        <span class="skills-ov-key">{{getKey(item.key)}} :</span>
+        <span class="skills-ov-value">{{getValue(item)}}</span>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+@import './../../styles/variables';
+$animation-time: .4s;
+
+@mixin box-shadow-appear($width) {
+    $animation-name: unique-id() !global;
+
+    box-shadow: 0 0 0 $width $lightGreenColor;
+    animation: .4s $animation-name;
+
+    @keyframes #{$animation-name} {
+        from {
+            box-shadow: 0 0 0 0 $lightGreenColor;
+        }
+        to {
+            box-shadow: 0 0 0 $width $lightGreenColor;
+        }
+    }
+}
+
+
+.home-main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-img {
+    @include box-shadow-appear(2rem);
+    height: 27rem;
+    border-radius: 5.4rem;
+    &.exit {
+        animation: .9s img-translate ease-in;
+        transform: translate(100%, -300%);
+        opacity: 0;
+    }
+}
+@keyframes img-translate {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    40%, 60% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    to {
+        transform: translate(100%, -200%);
+        opacity: 0;
+    }
+}
+.home-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    justify-content: center;
+    &.exit {
+        animation: $animation-time button-disappear ease-in;
+        transform: scaleX(0);
+    }
+}
+.home-title {
+    color: $mediumGreenColor;
+    font-family: hermeneusone;
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+.home-subtitle {
+    color: $lightGreenColor;
+    font-family: hermeneusone;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+}
+.home-parag {
+    font-size: 1.25rem;
+}
+.home-button {
+    align-self: flex-end;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    --time-text: .1s;
+}
+@keyframes text-disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes button-disappear {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@media (max-width: 1350px) {
+    .home-img {
+        height: 15rem;
+        border-radius: 3rem;
+        @include box-shadow-appear(1rem);
+    }
+    .home-main {
+        flex-direction: column;
+    }
+    .home-button {
+        align-self: auto;
+        margin: 3rem 0 1rem;
+    }
+    .home-content {
+        margin: 3rem 1rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+    .home-subtitle {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .home-img {
+        height: 10rem;
+        border-radius: 2rem;
+        @include box-shadow-appear(.5rem);
+    }
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-subtitle {
+        font-size: 1.5rem;
+    }
+    .home-parag {
+        font-size: 1rem;
+    }
+    .home-button {
+        margin-top: 2rem;
+    }
+    .home-content {
+        margin: 2rem 1rem 1rem;
+    }
+}

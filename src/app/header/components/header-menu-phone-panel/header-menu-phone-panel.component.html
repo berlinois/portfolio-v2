@@ -1,0 +1,27 @@
+<div class="panel-main" #main>
+    <div
+        [class.closing]="isClosingPanel"
+        class="panel-content">
+        <div class="panel-line">
+            <img
+                class="panel-profil"
+                (click)="closePanel('/home')"
+                src="assets/image/linkedin_round2.png"
+                alt="icon profile">
+            <img
+                class="panel-close"
+                (click)="closePanel()"
+                src="assets/icons/close.svg"
+                alt="icon menu">
+        </div>
+
+        <div
+            *ngFor="let item of menu.listItems"
+            [class.active]="isOnPath(item.link)"
+            (click)="closePanel(item.link)"
+            class="panel-item">
+            {{item.value}}            
+        </div>
+
+    </div>
+</div>

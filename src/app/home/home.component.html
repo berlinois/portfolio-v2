@@ -1,0 +1,32 @@
+<div class="home-main">
+    <img
+        src="assets/image/linkedin2.jpg"
+        alt="image profil"
+        [class.exit]="exitAnimation"
+        class="home-img"
+        [imageId]="imageId"
+        loadChecker>
+    
+    <div
+        *ngIf="homeDescription"
+        [class.exit]="exitAnimation"
+        class="home-content">
+        <h1 class="home-title">
+            {{homeDescription.title}}
+        </h1>
+        <span class="home-subtitle">
+            {{homeDescription.subtitle}}
+        </span>
+        <span
+            *ngFor="let line of homeDescription.paragraphs"
+            class="home-parag">
+            {{line}}
+        </span>
+        <button
+            (click)="navigateExperience()"
+            [class.exit]="exitAnimation"
+            class="home-button">
+            <div>{{homeDescription.buttonText}}</div>
+        </button>
+    </div>
+</div>

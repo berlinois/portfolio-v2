@@ -1,0 +1,20 @@
+.header-main {
+    display: flex;
+    margin: 3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-phone {
+    display: none;
+}
+@media (max-width: 750px) {
+    .header-main {
+        margin: 1rem;
+    }
+    .header-desktop {
+        display: none;
+    }
+    .header-phone {
+        display: flex;
+    }
+}

@@ -1,0 +1,20 @@
+<div class="skills-tech-main">
+   <span class="skills-tech-title">
+        {{domain.title}}
+   </span>
+
+   <div
+      *ngFor="let tech of domain.technologies"
+      class="skills-tech-line">
+
+      <div class="skills-tech-line-title">
+         <span>{{tech.title}}</span>
+         <span>{{tech.percentage}} %</span>
+      </div>
+
+      <div
+         class="skills-tech-line-bar"
+         [ngClass]="'w-'+tech.percentage">
+      </div>
+   </div>
+</div>

@@ -1,0 +1,19 @@
+@import './../../../../styles/variables';
+
+.header-lang-main {
+    display: flex;
+    align-items: center;
+}
+.header-lang-img {
+    height: 1.5rem;
+    object-fit: contain;
+    border-radius: 50%;
+    cursor: pointer;
+    &+& {
+        margin-left: 1rem;
+    }
+    &.active {
+        cursor: default;
+        border: 4px solid $lightGreenColor;
+    }
+}

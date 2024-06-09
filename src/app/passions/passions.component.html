@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div
+        *ngFor="let pass of passionsList.passions;let i = index;"
+        class="passion-item {{i}}">
+
+        <img
+            [src]="pass.imgSrc"
+            alt="image passion {{pass.title}}"
+            class="passion-item-img">
+
+        <div class="passion-item-block">
+            <span class="passion-item-title">
+                {{pass.title}}
+            </span>
+            <div class="passion-item-parag-content">
+                <span
+                    *ngFor="let parag of pass.paragraphs"
+                    class="passion-item-parag">
+                    {{parag}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="main-content exp-main">
+    <exp-card
+        *ngFor="let exp of experiencesList.experiencesList; let last = last"
+        [exp]="exp"
+        [isLast]="last"
+    ></exp-card>
+</div>
