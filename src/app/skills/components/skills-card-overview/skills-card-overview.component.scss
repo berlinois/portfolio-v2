@@ -1,18 +1,18 @@
-@import "./../../../../styles/variables";
+@use "./../../../../styles/variables";
 
 .skills-ov-main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 5rem;
-    background-color: $lightGreenColor;
-    border-radius: $cardBorderRadius;
+    background-color: variables.$lightGreenColor;
+    border-radius: variables.$cardBorderRadius;
     padding: 2rem 4rem;
     font-family: hermeneusone;
     gap: 2rem 7rem;
 }
 .skills-ov-key {
-    color: $darkGreenColor;
+    color: variables.$darkGreenColor;
 }
 .skills-ov-value {
     color: white;

@@ -1,4 +1,4 @@
-@import './../../../../styles/variables';
+@use './../../../../styles/variables';
 
 .header-lang-main {
     display: flex;
@@ -14,6 +14,6 @@
     }
     &.active {
         cursor: default;
-        border: 4px solid $lightGreenColor;
+        border: 4px solid variables.$lightGreenColor;
     }
 }

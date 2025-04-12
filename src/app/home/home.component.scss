@@ -1,18 +1,20 @@
-@import './../../styles/variables';
+@use './../../styles/variables';
+@use 'sass:string';
 $animation-time: .4s;
+$animation-name: null;
 
 @mixin box-shadow-appear($width) {
-    $animation-name: unique-id() !global;
+    $animation-name: string.unique-id() !global;
 
-    box-shadow: 0 0 0 $width $lightGreenColor;
+    box-shadow: 0 0 0 $width variables.$lightGreenColor;
     animation: .4s $animation-name;
 
     @keyframes #{$animation-name} {
         from {
-            box-shadow: 0 0 0 0 $lightGreenColor;
+            box-shadow: 0 0 0 0 variables.$lightGreenColor;
         }
         to {
-            box-shadow: 0 0 0 $width $lightGreenColor;
+            box-shadow: 0 0 0 $width variables.$lightGreenColor;
         }
     }
 }
@@ -26,7 +28,6 @@ $animation-time: .4s;
     align-items: center;
 }
 .home-img {
-    @include box-shadow-appear(2rem);
     height: 27rem;
     border-radius: 5.4rem;
     &.exit {
@@ -34,6 +35,7 @@ $animation-time: .4s;
         transform: translate(100%, -300%);
         opacity: 0;
     }
+    @include box-shadow-appear(2rem);
 }
 @keyframes img-translate {
     from {
@@ -60,14 +62,14 @@ $animation-time: .4s;
     }
 }
 .home-title {
-    color: $mediumGreenColor;
+    color: variables.$mediumGreenColor;
     font-family: hermeneusone;
     font-size: 4rem;
     margin: 0;
     margin-bottom: .5rem;
 }
 .home-subtitle {
-    color: $lightGreenColor;
+    color: variables.$lightGreenColor;
     font-family: hermeneusone;
     font-size: 3rem;
     margin-bottom: 2.5rem;

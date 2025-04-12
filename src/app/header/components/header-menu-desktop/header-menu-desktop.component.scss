@@ -1,8 +1,8 @@
-@import './../../../../styles/variables';
+@use './../../../../styles/variables';
 .header-menu-main {
     display: flex;
     width: fit-content;
-    border: 1px solid $lightGreenColor;
+    border: 1px solid variables.$lightGreenColor;
     border-radius: 1.68rem;
     animation: .6s menu-appear ease-out;
     &.exit {
@@ -27,14 +27,14 @@
 }
 .header-menu-item {
     padding: 1rem 3rem;
-    color: $lightGreenColor;
+    color: variables.$lightGreenColor;
     cursor: pointer;
     user-select: none;
     font-family: hermeneusone;
     letter-spacing: .05em;
     font-size: 1.1em;
     &.active {
-        background-color: $lightGreenColor;
+        background-color: variables.$lightGreenColor;
         cursor: default;
         color: white;
     }
@@ -53,6 +53,6 @@
     border-bottom-left-radius: 1.68rem;
     cursor: pointer;
     &.active-experience {
-        background-color: $lightGreenColor;
+        background-color: variables.$lightGreenColor;
     }
 }

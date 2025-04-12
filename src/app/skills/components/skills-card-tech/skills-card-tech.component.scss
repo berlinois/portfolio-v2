@@ -1,4 +1,5 @@
-@import "./../../../../styles/variables";
+@use "./../../../../styles/variables";
+@use 'sass:math';
 
 .skills-tech-main {
     display: flex;
@@ -6,8 +7,8 @@
     justify-content: center;
     width: 22rem;
     margin: 0 auto 3rem;
-    background-color: $lightGreenColor;
-    border-radius: $cardBorderRadius;
+    background-color: variables.$lightGreenColor;
+    border-radius: variables.$cardBorderRadius;
     padding: 2rem 4rem;
     color: white;
     font-family: hermeneusone;
@@ -39,13 +40,13 @@
         display: block;
         content: '';
         border-radius: 10px;
-        background-color: $darkGreenColor;
+        background-color: variables.$darkGreenColor;
     }
     @for $i from 1 through 20 {
         &.w-#{$i*5}::before {
             width: $i * 5%;
             animation: slide-#{$i*5} ease-in-out;
-            animation-duration: random()*.8+0.3 + s;
+            animation-duration: math.random()*.8+0.3 + s;
         }
     }
 }

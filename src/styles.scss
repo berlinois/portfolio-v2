@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import './styles/variables';
-@import './styles/basic-tag';
+@use './styles/variables';
+@use './styles/basic-tag';
 
 html, body {
     margin: 0;
     height: 100%;
-    background-color: $beigeColor;
+    background-color: variables.$beigeColor;
     font-family: kameron; 
 }
 

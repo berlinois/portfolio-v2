@@ -1,9 +1,9 @@
-@import '../../styles/variables';
+@use '../../styles/variables';
 
 .contact-main {
     display: flex;
-    border-radius: $cardBorderRadius;
-    background-color: $lightGreenColor;
+    border-radius: variables.$cardBorderRadius;
+    background-color: variables.$lightGreenColor;
     padding: 1.5rem 2rem;
     margin: 0 auto 2rem;
     width: fit-content;
@@ -15,18 +15,18 @@
 }
 .contact-number-number {
     margin-left: 1rem;
-    color: $darkGreenColor;
+    color: variables.$darkGreenColor;
     &.link {
         text-decoration: underline;
         cursor: pointer;
     }
 }
 .contact-number-mail {
-    color: $lightGreenColor;
+    color: variables.$lightGreenColor;
     margin: 1rem 0 1.5rem;
 }
 .contact-form {
-    border-radius: $cardBorderRadius;
+    border-radius: variables.$cardBorderRadius;
     padding: 1.5rem 4rem;
     display: flex;
     flex-direction: column;
@@ -60,5 +60,5 @@ textarea {
     height: 8rem;
 }
 button:disabled.sending {
-    background-color: $lightGreenColor;
+    background-color: variables.$lightGreenColor;
 }

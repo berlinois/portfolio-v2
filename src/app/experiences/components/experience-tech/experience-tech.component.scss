@@ -1,8 +1,8 @@
-@import './../../../../styles/variables';
+@use './../../../../styles/variables';
 
 .exp-card-tech-item {
     border-radius: 50%;
-    background-color: $darkGreenColor;
+    background-color: variables.$darkGreenColor;
     color: white;
     width: 5.5rem;
     height: 5.5rem;

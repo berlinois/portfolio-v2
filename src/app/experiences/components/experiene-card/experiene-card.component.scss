@@ -1,4 +1,4 @@
-@import './../../../../styles/variables';
+@use './../../../../styles/variables';
 .exp-content-main {
     display: flex;
     flex-direction: column;
@@ -25,18 +25,18 @@
     right: 0;
     top: 10px;
     bottom: 10px;
-    border-right: 2px solid $mediumGreenColor;
+    border-right: 2px solid variables.$mediumGreenColor;
     &.space {
         top: 0;
         bottom: 0;
-        border-right: 2px dotted $mediumGreenColor;
+        border-right: 2px dotted variables.$mediumGreenColor;
     }
 }
 .exp-timing-date-content {
     display: flex;
 }
 .exp-timing-date-value {
-    color: $darkGreenColor;
+    color: variables.$darkGreenColor;
     margin-right: .5rem;
 }
 .exp-timing-date-img {
@@ -50,18 +50,18 @@
     width: 5rem;
     align-self: center;
     transform-origin: 0 0;
-    color: $darkGreenColor;
+    color: variables.$darkGreenColor;
 }
 .exp-card {
     display: flex;
     justify-content: space-between;
-    background-color: $lightGreenColor;
+    background-color: variables.$lightGreenColor;
     width: 80%;
     padding: 1rem;
     padding-left: 3rem;
-    border-radius: $cardBorderRadius;
+    border-radius: variables.$cardBorderRadius;
     &.hidden {
-        background-color: $beigeColor;
+        background-color: variables.$beigeColor;
         height: 5rem;
     }
 }
@@ -81,7 +81,7 @@
     font-size: 2rem;
 }
 .exp-card-subtitle {
-    color: $darkGreenColor;
+    color: variables.$darkGreenColor;
     font-size: 1.1rem;
     margin-left: 1rem;
 }
